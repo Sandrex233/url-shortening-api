@@ -4,3 +4,17 @@
 
 
 @import url('https://fonts.googleapis.com/css2?family=Poppins:wght@500;700&display=swap');
+
+
+#shortenbg {
+    background: url('./assets/bg-shorten.svg') no-repeat;
+}
+
+#boostbg {
+    background: url('./assets/bg-boost.svg') no-repeat;
+}
+
+.hovered:hover {
+    
+filter: invert(51%) sepia(42%) saturate(903%) hue-rotate(145deg) brightness(97%) contrast(95%);
+}

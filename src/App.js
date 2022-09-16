@@ -9,7 +9,7 @@ import Footer from './components/Footer'
 
 function App() {
   return (
-    <div className="font-psans">
+    <div className="font-psans ">
       <Navbar />
       <Header />
       <Api />
