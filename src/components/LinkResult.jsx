@@ -3,10 +3,7 @@ import React, { useEffect, useState } from 'react'
 import CopyToClipboard from 'react-copy-to-clipboard';
 
 const LinkResult = ({ inputValue }) => {
-    function handleSubmit(e) {
-        e.preventDefault();
-        console.log('You clicked submit.');
-    }
+
 
 
     const [shortenLink, setShortenLink] = useState('');
