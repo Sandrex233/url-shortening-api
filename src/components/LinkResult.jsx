@@ -3,6 +3,12 @@ import React, { useEffect, useState } from 'react'
 import CopyToClipboard from 'react-copy-to-clipboard';
 
 const LinkResult = ({ inputValue }) => {
+    function handleSubmit(e) {
+        e.preventDefault();
+        console.log('You clicked submit.');
+    }
+
+
     const [shortenLink, setShortenLink] = useState('');
     const [copied, setCopied] = useState(false);
     const [loading, setLoading] = useState(false);
@@ -43,17 +49,32 @@ const LinkResult = ({ inputValue }) => {
     }
 
     return (
-        <div className='flex items-center justify-between py-2 px-6'>
-            <p className='mr-4 border-black border py-2 px-4'>{shortenLink}</p>
+        <>
+            {shortenLink && (
+                <div className='flex items-center justify-between mx-auto py-2 pt-7 space-y-6 md:space-y-0 px-6 max-w-[350px] md:max-w-5xl flex-col md:flex-row'>
+                    <div className=''>
+                        <p className='max-w-[300px]  break-all md:break-normal  flex items justify-between'>{inputValue}</p>
+                    </div>
 
-            <CopyToClipboard
-                text={shortenLink}
-                onCopy={() => setCopied(true)}
-            >
-                <button className='py-2 px-4 text-white bg-purple-700 border-none'>Copy</button>
-            </CopyToClipboard>
+                    <div className='flex items-start justify-center flex-col md:flex-row'>
+                        <p className='mr-4 py-2 md:px-4 text-[#2ACFCF]'>{shortenLink}</p>
+                        <CopyToClipboard
+                            text={shortenLink}
+                            onCopy={() => setCopied(true)}
+                        >
+                            {copied
+                                ? <button className='text-white bg-[#252329] text-base rounded-md transition ease-in-out p-2 px-32 md:px-10  baseline hover:opacity-90'>Copied!</button>
+                                : <button className='text-white bg-[#2ACFCF] rounded-md transition ease-in-out p-2 px-32 md:px-10  baseline hover:bg-[#85e6e6]'>Copy</button>
+                            }
 
-        </div>
+                        </CopyToClipboard>
+                    </div>
+
+                </div>
+            )
+            }
+        </>
+
     )
 }
 

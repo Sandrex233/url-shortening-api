@@ -21,12 +21,17 @@ const Navbar = () => {
                 </ul>
 
                 <ul
-                    className={!nav
-                        ? 'hidden'
-                        : 'absolute top-[100px] left-[60px] w-2/3 h-1/3 bg-white flex flex-col justify-center space-y-4 items-center text-gray-500'}>
-                    <li onClick={handleClick} className='hover:text-black cursor-pointer'>Features</li>
-                    <li onClick={handleClick} className='hover:text-black cursor-pointer'>Pricing</li>
-                    <li onClick={handleClick} className='hover:text-black cursor-pointer'>Resources</li>
+                    className={nav
+                        ? 'md:hidden fixed left-[15%] top-20 flex flex-col space-y-6 items-center justify-center rounded-xl w-3/4 h-2/4 bg-[#42385f] ease-in duration-300 z-10'
+                        : 'hidden'}
+                >
+                    <li onClick={handleClick} className='text-white text-lg cursor-pointer'>Features</li>
+                    <li onClick={handleClick} className='text-white text-lg cursor-pointer'>Pricing</li>
+                    <li onClick={handleClick} className='text-white text-lg cursor-pointer'>Resources</li>
+                    <div className='border border-gray-300 w-2/4'></div>
+                    <li onClick={handleClick} className='text-white text-lg cursor-pointer'>Login</li>
+                    <a href='/' className='md:hidden p-3 px-16 transition ease-in-out text-base text-white bg-[#2ACFCF]
+                rounded-full font-medium block'>Sign Up</a>
                 </ul>
             </div>
 
