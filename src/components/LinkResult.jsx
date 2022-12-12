@@ -45,12 +45,21 @@ const LinkResult = ({ inputValue }) => {
         return <p>Something went wrong</p>
     }
 
+    // Truncates a long link
+    const truncStr = () => {
+        const newStr = inputValue.slice(0, 60) + "..."
+        // console.log(newStr)
+        return newStr;
+    }
+
+    // console.log(truncStr(inputValue))
+
     return (
         <>
             {shortenLink && (
                 <div className='flex items-center justify-between mx-auto py-2 pt-7 space-y-6 md:space-y-0 px-6 max-w-[350px] md:max-w-5xl flex-col md:flex-row'>
                     <div className=''>
-                        <p className='max-w-[300px]  break-all md:break-normal  flex items justify-between'>{inputValue}</p>
+                        <p className='max-w-[300px]  break-all md:break-normal  flex items justify-between'>{truncStr(inputValue)}</p>
                     </div>
 
                     <div className='flex items-start justify-center flex-col md:flex-row'>
